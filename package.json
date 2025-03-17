@@ -1,0 +1,50 @@
+{
+  "name": "express-learn",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./dist/bin/www",
+    "build": "tsc",
+    "dev": "nodemon src/bin/www.ts",
+    "watch": "tsc -w",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "check-format": "prettier --check \"src/**/*.ts\"",
+    "seed": "ts-node src/database/seeder.ts",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:create": "npm run typeorm -- migration:create",
+    "migration:run": "npm run typeorm -- migration:run -d src/config/database.ts",
+    "migration:revert": "npm run typeorm -- migration:revert -d src/config/database.ts"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.6.0",
+    "@types/pg": "^8.11.11",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.4.7",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "pg": "^8.14.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.21"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8",
+    "@types/debug": "^4.1.12",
+    "@types/express": "^5.0.0",
+    "@types/faker": "^6.6.8",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.13.10",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "faker": "^6.6.6",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "typeorm-seeding": "^1.6.1",
+    "typescript": "^5.8.2"
+  }
+}
