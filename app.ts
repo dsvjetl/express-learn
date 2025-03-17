@@ -25,9 +25,11 @@ app.use(cookieParser());
 // Import routes after database initialization
 import indexRouter from './src/routes/index';
 import usersRouter from './src/routes/users';
+import postsRouter from './src/routes/posts';
 
 // Routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/posts', postsRouter);
 
 export default app;

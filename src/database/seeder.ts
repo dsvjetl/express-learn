@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { AppDataSource } from '../config/database';
-import { createUsers } from './seeders/createUsers'; // adjust the path according to your project structure
+import { createUsers } from './seeders/createUsers';
+import { createPosts } from './seeders/createPosts'; // adjust the path according to your project structure
 
 async function seed() {
   try {
@@ -10,6 +11,7 @@ async function seed() {
 
     // Initialize dummy data
     await createUsers(faker);
+    await createPosts(faker);
 
     console.log('Seeding completed successfully');
   } catch (error) {
